@@ -1,0 +1,46 @@
+/**
+	Package: CloudDrive
+	Author: Kaldygulov Aimurat, Mukhamejanov Azamat
+	Copyright: All right's reserved 2012 (c)
+**/
+
+#lean_overlay {
+    position: fixed;
+    z-index: 10000;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+/* SHARE LINK */
+
+#share-link{
+	width: 500px;
+	padding: 20px; 
+    display:none;
+    background: #FFF;
+	border: 1px solid #727272;
+}
+
+/* UPLOAD */
+
+#upload {
+	width: 500px;
+	padding: 20px; 
+    display:none;
+    background: #FFF;
+	border: 1px solid #727272;
+}
+
+/* CREATE NEW FOLDER */
+
+#new-folder {
+	width: 500px;
+	padding: 20px; 
+    display:none;
+    background: #FFF;
+	border: 1px solid #727272;
+}

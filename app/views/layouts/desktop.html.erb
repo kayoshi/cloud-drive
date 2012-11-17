@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ </head>
+<body>
+
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+  <div id="header">
+    <a href="/setting"><div style="float: left;" id="push"><img src=<%= asset_path "UI/setting.png" %> /></div></a>
+    <a onclick="history.back()"><div style="float: left;" id="push"><img src=<%= asset_path "UI/logout.png"%> /></div></a>
+    <a href="#delete"><div style="float: right;" id="push"><img src=<%= asset_path "UI/delete.png" %> /></div></a>
+    <a id="go" rel="leanModal" name="new-folder" href="#new-folder"><div style="float: right;" id="push"><img src=<%= asset_path "UI/new-folder.png" %> /></div></a>
+    <a href="#download"><div style="float: right;" id="push"><img src=<%= asset_path "UI/download.png" %> /></div></a>
+    <a id="go" rel="leanModal" name="upload" href="#upload"><div style="float: right;" id="push"><img src=<%= asset_path "UI/upload.png" %> /></div></a>
+  </div>
+</body>
+</html>

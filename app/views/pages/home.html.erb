@@ -1,0 +1,80 @@
+<div id="container">
+	<div id="header">
+		<a href="/setting"><div style="float: left;" id="push"><img src=<%= asset_path "UI/setting.png" %> /></div></a>
+		<a href=<% link_to destroy_client_session_path %>><div style="float: left;" id="push"><img src=<%= asset_path "UI/logout.png"%> /></div></a>
+		<a href="#delete"><div style="float: right;" id="push"><img src=<%= asset_path "UI/delete.png" %> /></div></a>
+		<a id="go" rel="leanModal" name="new-folder" href="#new-folder"><div style="float: right;" id="push"><img src=<%= asset_path "UI/new-folder.png" %> /></div></a>
+		<a href="#download"><div style="float: right;" id="push"><img src=<%= asset_path "UI/download.png" %> /></div></a>
+		<a id="go" rel="leanModal" name="upload" href="/cloud_files/new"><div style="float: right;" id="push"><img src=<%= asset_path "UI/upload.png" %> /></div></a>
+	</div>
+	<br/>
+	<div id="leftbar">
+		<ul>
+			<li><img src=<%= asset_path "UI/home.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">CloudDrive</i></li>
+			<li><img src=<%= asset_path "UI/share.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">Общий доступ</i></li>
+			<li><img src=<%= asset_path "UI/getstart.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">Начать работу</i></li>
+		</ul>
+	</div>
+	<table id="table">
+		<tr>
+			<td id="td_m" width="3%"></td>
+			<td id="td_m" width="5%"><div style="width:20px; height: 20px;"></div></td>
+			<td id="td_m" width="50%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку">Имя</td>
+			<td id="td_m" width="17%">Тип</td>
+			<td id="td_m" width="20%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку">Дата обновления</td>
+			<td id="td_m" width="5%"><div style="width:20px; height: 20px;"></div></td>
+		</tr>
+		<% @cloud_files.each do |cloud_file| %>
+		<tr id="list">
+			<td width="3%"><div id="checkboxes"><label><input type="checkbox" class="checkbox tick" id="checkbox"></label></div></td>
+			<td id="td" width="5%"><div id="type"></div></td>
+			<td id="td" width="50%"><a href=<%= cloud_file.data %>><%= cloud_file.name %></a></td>
+			<td id="td" width="20%"><%= cloud_file.data.the_ext %></td>
+			<td id="td" width="20%">21.09.2012</td>
+			<td id="td" width="5%">
+				<a id="go" rel="leanModal" name="share-link" href="#share-link">
+				<div id="share">
+					<div id="hint">
+						Поделиться ссылкой
+					</div>
+				</div>
+				</a>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	<!--Modal.Window-->
+	<div id="upload">
+		<h2>Upload</h2>
+		<input type="file" />
+		<p>
+		<div class="color blue button" style="float: right">
+			<div style="margin-left: 10px; margin-right: 10px;">Загрузить</span></div>
+		</div><!--end.color-blue-button-->
+		</p>
+	</div>
+	<div id="new-folder">
+		<h2>New folder</h2>
+		<p>
+		<input type="text" placeholder="Новая папка" id="set-in">
+		</p>
+		<div class="color blue button" style="float: right">
+			<div style="margin-left: 10px; margin-right: 10px;">Создать</span></div>
+		</div><!--end.color-blue-button-->
+	</div>
+	<div id="share-link">
+		<h2>Share link</h2>
+		<p>
+		<input type="text" placeholder="Введите имя пользователя" id="set-in">
+		</p>
+		или
+		<p>
+		<input type="text" placeholder="Email для пригласительного билета" id="set-in">
+		</p>				
+		<div class="color blue button" style="float: right">
+			<div style="margin-left: 10px; margin-right: 10px;">Сделать общий доступ</span></div>
+		</div><!--end.color-blue-button-->				
+	</div>			
+	<!--End.Modal.Window-->
+	<br/><br/>	
+</div><!-- end.container-->

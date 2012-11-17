@@ -1,0 +1,64 @@
+		<div id="container">
+			<div id="header">
+		    <a href="/setting">
+		    	<div style="float: left;" id="push"><img src=<%= asset_path "UI/setting.png" %> /></div>
+		    </a>
+		    <a onclick="history.back()">
+		    	<div style="float: left;" id="push"><img src=<%= asset_path "UI/logout.png"%> />
+		    	</div>
+		    </a>
+			</div>
+			<br/>
+	<div id="leftbar">
+		<ul>
+			<li><img src=<%= asset_path "UI/home.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">CloudDrive</i></li>
+			<li><img src=<%= asset_path "UI/share.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">Общий доступ</i></li>
+			<li><img src=<%= asset_path "UI/getstart.png" %> style="vertical-align: middle"><i style="margin-left: 10px;">Начать работу</i></li>
+		</ul>
+	</div>
+			<table id="table">
+				<tr>
+					<td width="50%">
+						<fieldset id="info">
+							<legend>Информация о пользователе</legend>
+							Имя:<input type="text" name="" value="<%= current_client.firstname %>" id="set-in" />
+							Фамилия:<input type="text" name="" value="<%= current_client.lastname %>" id="set-in"/>
+							<input class="set-button" type="submit" value="Сохранить"/>
+						</fieldset>
+					</td>
+					<td width="50%">
+						<fieldset id="info">
+							<legend>Изменение пароля</legend>
+							Новый пароль:<input type="text" name="password" placeholder="" id="set-in" />
+							Еще раз:<input type="text" name="password_confirmation" placeholder="" id="set-in"/>
+							<input class="set-button" type="submit" value="Сохранить"/>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%">
+						<fieldset id="info">
+							<legend>Выслать новый пароль по email</legend>
+							<input type="text" value="<%= current_client.email %>" id="set-in"/><input class="set-button" type="submit" value="Отправить"/>
+						</fieldset>
+					</td>
+					<td width="50%">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<fieldset id="info">
+							<legend>Индикатор дискового пространства</legend>
+							<table id="border" width="100%">
+								<tr>
+									<td id="full" width="13%">7Гб</td>
+									<td id="free" width="">Свободно 43Гб</td>
+								</tr>
+							</table>
+							Всего: 50Гб.
+						</fieldset>
+					</td>
+				</tr>				
+			</table>
+			<br/><br/>	
+		</div><!-- end.container-->

@@ -1,0 +1,49 @@
+		<div id="container">
+			<div id="header">
+				<a href="/setting">
+				<div style="float: left;" id="push"><img src=<%= asset_path "UI/setting.png"%> /></div>
+				</a>
+			</div><!-- end.header -->
+			<p style="font-size: 24px; color: #333; margin-left: 24px;">Добро пожаловать, <%= current_client.fullname %>	</p>
+			<form name="auth" action=<%= destroy_client_session_path %> method="DELETE">
+				<input type="submit" />
+			</form>
+		<%# if client_signed_in? %>
+  		<%#= link_to(destroy_client_session_path, :method => :delete, :name => "auth") %>
+  	<%# end %>
+
+			<div id="welcome-1">
+				<img src=<%= asset_path "welcome/admin.png" %> style="margin-left: 120px; margin-top: 10px;" />
+				<br/><br/><br/>
+				<center id="margin">
+						<div class="color blue button">
+							<a style="color: white" href="/home"><div class="download">Начать работу</div></a>
+						</div><!--end.color-blue-button-->
+				</center><!--end.center-->
+			</div><!-- end.welcome-1 -->
+			<div id="welcome-2">
+				<div id="wel-block">
+				<img src=<%= asset_path "welcome/case.png" %> />
+				<div id="opred"><div style="font-size: 18px;">Document case</div>
+				<p>Формируйте команды и ставьте задачи. Планируйте вехи проектов, отслеживайте активность в рамках проекта и генерируйте отчеты.</p></div>
+				</div>
+				<div id="wel-block">
+				<img src=<%= asset_path "welcome/calendar.png" %> />
+				<div id="opred"><div style="font-size: 18px;">Calendar</div>
+				<p>Формируйте команды и ставьте задачи. Планируйте вехи проектов, отслеживайте активность в рамках проекта и генерируйте отчеты.</p></div>
+				</div>
+				<div id="wel-block">
+				<img src=<%= asset_path "welcome/music.png" %> />
+				<div id="opred"><div style="font-size: 18px;">Music file</div>
+				<p>Формируйте команды и ставьте задачи. Планируйте вехи проектов, отслеживайте активность в рамках проекта и генерируйте отчеты.</p></div>
+				</div>
+				<div id="wel-block">
+				<img src=<%= asset_path "welcome/video.png" %> />
+				<div id="opred"><div style="font-size: 18px;">Video file</div>
+				<p>Формируйте команды и ставьте задачи. Планируйте вехи проектов, отслеживайте активность в рамках проекта и генерируйте отчеты.</p></div>
+				</div>
+			</div><!-- end.welcome-2 -->
+	<div id="footer">
+		<%= render :template => '/pages/footer' %>
+	</div><!--end.footer-->
+	<div id="br"></div>

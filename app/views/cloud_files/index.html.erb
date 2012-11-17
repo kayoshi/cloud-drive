@@ -1,0 +1,27 @@
+<h1>Listing cloud_files</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Data</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cloud_files.each do |cloud_file| %>
+  <tr>
+    <td><%= cloud_file.name %></td>
+    <td><%= cloud_file.description %></td>
+    <td><a href="<%= cloud_file.data %>">Download</a></td>
+    <td><%= link_to 'Show', cloud_file %></td>
+    <td><%= link_to 'Edit', edit_cloud_file_path(cloud_file) %></td>
+    <td><%= link_to 'Destroy', cloud_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cloud file', new_cloud_file_path %>

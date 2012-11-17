@@ -1,0 +1,41 @@
+<div id="container">
+  <img style="margin-top: 30px;" src=<%= asset_path "logo-home.png"%> width="200px" />
+  <table width="100%">
+    <tr>
+      <td style="vertical-align: top;">
+        <div id="background-block">
+        </div>
+      </td>
+      <td style="vertical-align: top;">
+        <div id="authorization">
+          <h2>Войти на сайт</h2>
+          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <table width="100%">
+            <tr>
+              <td colspan="2"><%= f.email_field :email, :id => "login", :placeholder => "Еmail" %></td>
+            </tr>
+            <tr>
+              <td colspan="2"><%= f.password_field :password, :id => "login", :placeholder => "Пароль" %></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="color blue button" style="padding: 5px 15px 5px 15px; margin-top: 7px; float: left;">
+                <%= link_to "Регистрация", new_registration_path(resource_name) %></div>
+              </td>
+              <td>
+                <%= f.submit "Sign in", :class => "color blue button", :style => "padding: 5px 15px 5px 15px; float: right; margin-top: 7px;", :value => "Войти" %>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><%#= render "devise/shared/links" %><a style="color: deepskyblue; float: right;" href="">Забыли пароль?</a></td>
+            </tr>
+          </table>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div id="footer">
+    <%= render :template => "/pages/footer" %>
+  </div><!--end.footer-->
+</div>

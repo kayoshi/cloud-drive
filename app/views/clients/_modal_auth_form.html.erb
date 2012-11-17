@@ -1,0 +1,27 @@
+<div id="auth">
+  <h2>Войти на сайт</h2>
+  <%= form_for(:client, :as => :client, :url => session_path(:client), :remote => true) do |f| %>
+    <table width="100%">
+      <tr>
+        <td colspan="2">
+          <%= f.email_field :email, :placeholder => 'Email' %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <%= f.password_field :password, :placeholder => "Пароль"  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a id="go" rel="leanModal" name="signup" href="#signup">
+            <div class="color blue button" style="padding: 5px 15px 5px 15px; margin-top: 7px; float: left;">Регистрация</div>
+          </a>
+        </td>
+        <td>
+          <button class="color blue button" style="padding: 5px 15px 5px 15px; float: right; margin-top: 7px;">Войти</button> 
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

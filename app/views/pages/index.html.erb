@@ -1,0 +1,14 @@
+<% if client_signed_in? %>
+  <script type="text/javascript">
+    window.location.href="/welcome"  // put your correct path in a string here
+  </script>
+<% end %>
+
+<div id="container">
+	<%= render :template => '/pages/content' %>
+	<div id="br"></div>
+	<div id="footer">
+		<%= render :template => '/pages/footer' %>
+	</div><!--end.footer-->
+	<div id="br"></div>
+</div><!-- end.container-->

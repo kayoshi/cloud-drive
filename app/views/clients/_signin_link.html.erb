@@ -1,0 +1,14 @@
+<% if client_signed_in? %>
+  <%= link_to(destroy_client_session_path, :method => :delete, :name => "auth", :style => "color: deepskyblue") do %>
+    <div style="float: right; margin-top: 10px;">
+      <%= current_client.fullname %>
+      <img style="vertical-align: middle;" src=<%= asset_path "key.png"%> width="32px" /><i style="vertical-align: middle;">Выйти</i>
+    </div>
+  <% end %>
+<% else %>
+  <a id="go-old" rel="leanModal" name="auth" href="/clients/sign_in" style="color: deepskyblue">
+    <div style="float: right; margin-top: 10px;">
+      <img style="vertical-align: middle;" src=<%= asset_path "key.png"%> width="32px" /><i style="vertical-align: middle;">Войти</i>
+    </div>
+  </a>
+<% end %>

@@ -1,0 +1,43 @@
+<div id="container">
+  <img style="margin-top: 30px;" src=<%=asset_path "logo-home.png" %> width="200px" />
+  <table width="100%">
+    <tr>
+      <td style="vertical-align: top;">
+        <div id="background-block2">
+        </div>
+      </td>
+      <td style="vertical-align: top;">
+        <div id="authorization">
+          <h2>Регистрация</h2>
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <table width="100%">
+            <tr>
+              <td><%= f.text_field :firstname, :id => "login", :placeholder => "Имя" %></td>
+            </tr>
+            <tr>
+              <td ><%= f.text_field :lastname, :id => "login", :placeholder => "Фамилия" %></td>
+            </tr>
+            <tr>
+              <td><%= f.email_field :email, :id => "login", :placeholder => "Email" %></td>
+            </tr>
+            <tr>
+              <td ><%= f.password_field :password, :id => "login", :placeholder => "Пароль" %></td>
+            </tr>
+            <tr>
+              <td ><%= f.password_field :password_confirmation, :id => "login", :placeholder => "Подтвердите пароль" %></td>
+            </tr>
+            <tr>
+              <td>
+              <%= f.submit "Регистрация", :class=>"color blue button", :style=>"padding: 5px 15px 5px 15px; margin-top: 7px; float: right;" %>
+              </td>
+            </tr>
+          </table>
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div id="footer">
+    <?php include_once('footer.php');?>
+  </div><!--end.footer-->
+</div>
